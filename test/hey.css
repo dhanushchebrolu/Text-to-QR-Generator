@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --font: 'Inter', 'sans-serif';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContainer {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('qrBg.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContainer.opacity {
+    opacity: 0.4;
+}
+
+.sidebar, .homeContainer {
+    width: 60%; /* slightly bigger */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar img {
+    width: 15%;
+    margin: 0 20px;
+}
+
+.sidebar .textContainer h1,
+.sidebar .textContainer p {
+    font-family: var(--font);
+    margin-bottom: 5px;
+}
+
+.home {
+    height: 280px; /* taller */
+    width: 65%;   /* wider */
+    background-color: #fff;
+    box-shadow: 0 5px 15px black;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home h2 {
+    font-family: var(--font);
+    margin-bottom: 10px;
+    font-size: 24px; /* slightly bigger */
+}
+
+#qrInput {
+    height: 45px;    /* bigger height */
+    width: 85%;      /* wider input */
+    border-radius: 8px;
+    border: 1px solid black;
+    margin: 20px 0 30px;
+    padding: 10px;
+    font-size: 18px; /* bigger text */
+    font-family: var(--font);
+}
+
+#generateBtn,
+#downloadBtn,
+#closeBtn {
+    height: 45px;    /* bigger button height */
+    width: 90%;      /* wider buttons */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font);
+    font-size: 18px; /* bigger text */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#generateBtn:hover,
+#downloadBtn:hover,
+#closeBtn:hover {
+    transform: scale(1.03);
+}
+
+#qrPopup {
+    height: 450px;
+    width: 320px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px #212121;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s;
+}
+
+#qrPopup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+#qrImg {
+    width: 75%;
+    border: 8px solid white;
+    border-radius: 6px;
+    margin: 20px 0 25px;
+}
+
+#qrPopup h2 {
+    color: white;
+    font-family: var(--font);
+}
+
+#downloadBtn {
+    width: 75%;
+    background-color: #fff;
+    color: black;
+    margin: 5px 0;
+}
+
+#closeBtn {
+    width: 75%;
+    border: 1px solid white;
+    margin: 5px 0;
+}
